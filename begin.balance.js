@@ -8,16 +8,14 @@ module.exports = {
       }
     }
 
-    if (Game.spawns['Spawn1'].Spawning != null ||
-        Game.spawns['Spawn1'].spawnCreep([ WORK, CARRY, MOVE ], 'harvester',
-                                         {dryRun : true}) != 0) {
+    if (Game.spawns['Spawn1'].Spawning != null ) {
       // console.log('can\'t')
       return; //检测创造screep是否可行
     }
     var roles = {
-      'harvester' : [ 2, [ WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE ] ],
-      'upgrader' : [ 3, [ WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE ] ],
-      'builder' : [ 3, [ WORK, WORK, WORK, CARRY, CARRY, MOVE, MOVE ] ]
+      'harvester' : [ 1, [ WORK, CARRY, MOVE ] ],
+      'upgrader' : [ 1, [ WORK, CARRY, MOVE ]  ],
+      'builder' : [ 2, [ WORK, CARRY, MOVE ]  ]
     }; //配置文件
 
     //优先满足采集
